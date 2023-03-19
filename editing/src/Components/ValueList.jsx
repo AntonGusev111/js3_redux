@@ -19,6 +19,7 @@ export default function ValueList() {
       const inputs = document.querySelectorAll('input');
         inputs[0].value=object.name;
         inputs[1].value=object.count;
+        inputs[2].value=object.id
     }
 
 
@@ -26,7 +27,7 @@ export default function ValueList() {
     <ul>
       {items.map((o) => (
         <li>
-          {o.name} {o.count}
+          {o.name} {o.count} 
           <button onClick={() => handleChange(o)}>R</button>
           <button onClick={() => handleRemove(o)}>✕</button>
         </li>

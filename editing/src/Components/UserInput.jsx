@@ -14,11 +14,12 @@ export default function UserInput() {
       e.preventDefault();
       const inputs = document.querySelectorAll('input');
       const value ={
+          id:inputs[2].value,
           name:inputs[0].value,
           count: inputs[1].value
       };
       items.map((obj)=>{
-        if(obj.name==value.name){
+        if(obj.id==value.id){
           dispatch(dellValue({id:obj.id}));
         }
       })
@@ -30,6 +31,7 @@ export default function UserInput() {
         const inputs = document.querySelectorAll('input');
         inputs[0].value='';
         inputs[1].value='';
+        inputs[2].value='';
     };
 
 
@@ -37,6 +39,7 @@ export default function UserInput() {
     <div>
       <input></input>
       <input></input>
+      <input type="hidden"></input>
       <button onClick={addValues} >Save</button>
       <button onClick={clearValue}>Clear</button>
     </div>
